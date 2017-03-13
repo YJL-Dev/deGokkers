@@ -9,28 +9,28 @@
     <title>Brostrisch</title>
 </head>
 <body>
-    // header
+    /* header*/
 
 
 
-    // video sectie
+    /* video sectie*/
 
 
 
-    // download sectie
+    /* download sectie*/
 
 
 
-    // about sectie
+    /* about sectie*/
 
 
 
-    // register sectie
+    /* register sectie*/
 
 
-    // login sectie
+    /* login sectie*/
 
 
-    // footer
+    /* footer*/
 </body>
 </html>
