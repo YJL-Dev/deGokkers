@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+	padding: 0;
+    background-color: #ffac6e;
+    align-items: center;
+}
+body
+{
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'stranger';
+    src: url('Fonts/StrangerbackintheNight.eot'); /* IE9 Compat Modes */
+    src: url('Fonts/StrangerbackintheNight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Fonts/StrangerbackintheNight.woff') format('woff'), /* Pretty Modern Browsers */
+    url('Fonts/StrangerbackintheNight.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('Fonts/StrangerbackintheNight.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'ristella';
+    src: url('Fonts/Ristella/RistellaPERSONALUSEONLY.eot'); /* IE9 Compat Modes */
+    src: url('Fonts/Ristella/RistellaPERSONALUSEONLY.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('Fonts/Ristella/RistellaPERSONALUSEONLY.woff') format('woff'), /* Pretty Modern Browsers */
+    url('Fonts/Ristella/RistellaPERSONALUSEONLY.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('Fonts/Ristella/RistellaPERSONALUSEONLY.svg') format('svg'); /* Legacy iOS */
+}
+.row-spaced{
+	display: flex;
+	justify-content: space-around;
+}
+
+.image-left-download img
+{
+    max-width: 600px;
+
+}
+
+.right-content-download{
+	margin-top: 10%;
+	float: left;
+
+}
+.right-content-download a{
+	background: #8b684e;
+	color: #ffac6e;
+	border: 3px solid #b39c8b;
+	border-radius: 5px;
+	font-size: 12em;
+    font-family: stranger;
+    text-decoration: none;
+    padding: 0 4% 0 4%;
+}
+.right-content-download p{
+	font-size: 1.5em;
+	color: #8b684e;
+    letter-spacing: 2px;
+}
+.right-content-download h1
+{
+    font-family: "Ristella";
+    font-size: 5em;
+    color: #8b684e;
+    font-weight: lighter;
+}
+#download_h1_top
+{
+    margin: 6% 0 0 6%;
+    font-size: 7em;
+}
+/*==============about==============*/
+.top-content-about h1{
+    text-align: center;
+    font-size: 10em;
+    color: #8b684e;
+    font-family: "Sitka Banner";
+    font-weight: lighter;
+    letter-spacing: 50px;
+    margin-top: 2%;
+}
+.right-content-about p{
+    font-family: "Sitka Banner";
+    color: #8b684e;
+    font-size: 3.5em;
+    text-align: center;
+}
+.about-section img{
+    max-width: 450px;
+}
+@media screen and (max-width: 1240px) {
+    .image-left-download img {
+        max-width: 300px;
+    }
+
+    .right-content-download a {
+        background: #8b684e;
+        color: #ffac6e;
+        border: 3px solid #b39c8b;
+        border-radius: 5px;
+        font-size: 6em;
+        font-family: stranger;
+        text-decoration: none;
+        padding: 0 4% 0 4%;
+    }
+    .bottom-content-about{
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        float: none;
+    }
+    .download-section {
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-content-download h1 {
+        font-family: "Ristella";
+        font-size: 2.5em;
+        color: #8b684e;
+        font-weight: lighter;
+    }
+
+    #download_h1_top {
+        margin: 6% 0 0 6%;
+        font-size: 3.5em;
+    }
+
+    * {
+        text-align: center;
+    }
+
+    .top-content-about h1 {
+        text-align: center;
+        font-size: 5em;
+        color: #8b684e;
+        font-family: "Sitka Banner";
+        font-weight: lighter;
+        letter-spacing: 50px;
+        margin-top: 2%;
+    }
+
+    .about-section img {
+        max-width: 225px;
+    }
+
+    .right-content-about p {
+        font-family: "Sitka Banner";
+        color: #8b684e;
+        font-size: 1.75em;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 520px){
+    .bottom-content-about{
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        float: none;
+    }
+    .about-section h1{
+        font-size: 3.5em;
+        text-align: center;
+        letter-spacing: 0em;
+    }
+}
+
+@media  screen and (max-width: 375px) {
+
+}
+
