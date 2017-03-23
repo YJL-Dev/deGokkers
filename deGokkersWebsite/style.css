@@ -1,11 +1,13 @@
 *,a{
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
-body{
+html, body{
 	background-color: #FFA664;
 	font-family: "Sitka Banner", Times, serif;
 	overflow-x: hidden;
+	width: 100%;
 }
 @font-face{
 	font-family: 'stranger';
@@ -55,10 +57,10 @@ li a {
 	display: flex;
 	color: #ffac6e;
 	text-decoration: none;
-	font-size: 80px;
+	font-size: 70px;
 }
 h1{
-	font-weight:bolder;
+	font-weight: bolder;
 	letter-spacing: 50px;
 	font-size: 80px;
 	text-align: center;
@@ -67,10 +69,13 @@ h1{
 	margin-right: -50px;
 	font-family: stranger;
 }
+h2{
+	font-size: 75px;
+}
 h3{
 	font-weight: lighter;
 	letter-spacing: 50px;
-	font-size: 80px;
+	font-size: 70px;
 	text-align: center;
 	margin-bottom: 20px;
 	white-space: pre;
@@ -88,6 +93,7 @@ input{
 	border-radius: 1px;
 	padding-left: 2px;
 	margin-bottom: 5px;
+	text-align: justify;
 }
 button{
 	background: #FFA664;
@@ -123,6 +129,8 @@ footer a{
 	display: flex;
 	margin: 0 auto;
 	border: 0;
+	width: 854px;
+	height: 480px;
 }
 .video h4 {
 	color: #372d25;
@@ -134,7 +142,7 @@ footer a{
 	font-family: "pixel";
 }
 .main{
-	padding: 50px;
+	padding: 50px 20px 50px 20px;
 }
 .main .about-section h3{
 	color: #8b684E;
@@ -151,18 +159,12 @@ footer a{
 	font-size: 12em;
 	font-family: stranger;
 	text-decoration: none;
-	padding: 0 4% 0 4%;
+	padding: 2% 4% 2% 4%;
 	margin-bottom: 50px;
-}
-#download_h1_top
-{
-	margin: 6% 0 0 6%;
-	font-size: 7em;
 }
 .right-content-download h2
 {
 	font-family: "Ristella";
-	font-size: 5em;
 	color: #8b684e;
 	font-weight: lighter;
 }
@@ -174,8 +176,8 @@ footer a{
 .about-section img{
 	max-width: 450px;
 }
-.about-section H3{
-	padding: 50px;
+.about-section h3{
+	text-align: center;
 }
 .bottom-content-about.row-spaced{
 	margin-bottom: 50px;
@@ -214,13 +216,176 @@ footer a{
 	text-align: center;
 	width: 400px;
 }
+@media screen and (max-width: 2560px){
+	body {
+		zoom: 1.5;
+		-moz-transform: scale(1.5);
+		-moz-transform-origin: 0 0;
+	}
+}
+@media screen and (max-width: 2400px) {
+	body {
+		zoom: 1.2;
+		-moz-transform: scale(1.2);
+		-moz-transform-origin: 0 0;
+	}
+}
+@media screen and (max-width: 1675px) {
+	body {
+		zoom: 1;
+		-moz-transform: scale(1);
+		-moz-transform-origin: 0 0;
+	}
+}
+@media screen and (max-width: 1400px) {
+	body {
+		zoom: 0.9;
+		-moz-transform: scale(0.9);
+		-moz-transform-origin: 0 0;
+	}
+}
+@media screen and (max-width: 1250px) {
+	.image-left-download img {
+		max-width: 300px;
+		margin-bottom: -50px ;
+	}
+	.right-content-download a {
+		background: #8b684e;
+		color: #ffac6e;
+		border: 3px solid #b39c8b;
+		border-radius: 5px;
+		font-size: 8em;
+		font-family: stranger;
+		text-decoration: none;
+		padding: 0 4% 0 4%;
+	}
+	.bottom-content-about{
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		float: none;
+	}
+	.download-section {
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		display: flex;
+		flex-direction: column;
+	}
+	.right-content-download h1 {
+		font-family: "Ristella";
+		font-size: 2.5em;
+		color: #8b684e;
+		font-weight: lighter;
+	}
+	.top-content-about h1 {
+		text-align: center;
+		font-size: 5em;
+		color: #8b684e;
+		font-family: "Sitka Banner";
+		font-weight: lighter;
+		letter-spacing: 50px;
+		margin-top: 2%;
+	}
+	.about-section img {
+		max-width: 225px;
+	}
+	.right-content-about p {
+		font-family: "Sitka Banner";
+		color: #8b684e;
+		font-size: 1.75em;
+		text-align: center;
+		margin-top: -10px;
+	}
+	.right-content-download p {
+		font-size: 20px;
+		color: #8b684e;
+		letter-spacing: 2px;
+	}
+}
+@media screen and (max-width: 935px) {
+	.video iframe {
+		width: 740px;
+		height: 480px;
+	}
+}
+@media screen and (max-width: 859px) {
+	h1{
+		font-size: 60px;
+		padding: 0;
+	}
+	h2{
+		font-size: 55px;
+	}
+}
+@media screen and (max-width: 770px) {
+	.video iframe {
+		width: 680px;
+		height: 480px;
+	}
+}
+@media screen and (max-width: 750px) {
+	h3{
+		font-size: 48px;
+	}
+	.video h4 {
+		font-size: 40px;
+	}
+	.right-content-download p {
+		font-size: 16px;
+		color: #8b684e;
+		letter-spacing: 2px;
+	}
+	.right-content-about p {
+		font-family: "Sitka Banner";
+		color: #8b684e;
+		font-size: 1.75em;
+		text-align: center;
+		margin-top: 0px;
+	}
+	.image-left-download img {
+		max-width: 300px;
+		margin-bottom: 0px ;
+	}
+}
+@media screen and (max-width: 700px) {
+	h1{
+		font-size: 60px;
+		letter-spacing: 20px;
+	}
 
-@media screen and (max-width: 1452px) {
-
+	.video iframe {
+		width: 600px;
+		height: 400px;
+	}
 }
 @media screen and (max-width: 606px) {
 	h3{
-		font-size: 60px;
+		font-size: 45px;
+	}
+	.video h4 {
+		font-size: 37px;
+	}
+	.video iframe {
+		width: 550px;
+		height: 350px;
+	}
+}
+@media screen and (max-width: 560px) {
+	li a {
+		font-size: 50px;
+	}
+	h1{
+		font-size: 55px;
+		letter-spacing: 10px;
+		margin: 0;
+	}
+	h2{
+		font-size: 50px;
+	}
+	.video iframe {
+		width: 500px;
+		height: 300px;
 	}
 }
 @media screen and (max-width: 540px) {
@@ -228,6 +393,26 @@ footer a{
 		font-size: 40px;
 		letter-spacing: 30px;
 		margin-right: -30px;
+	}
+	.video h4 {
+		font-size: 33px;
+	}
+	.video iframe {
+		width: 400px;
+		height: 200px;
+	}
+}
+@media screen and (max-width: 465px) {
+	header img{
+		display: none;
+	}
+	.right-content-download p {
+		font-size: 12px;
+		color: #8b684e;
+		letter-spacing: 2px;
+	}
+	.right-content-download a {
+		font-size: 5em;
 	}
 }
 @media screen and (max-width: 415px) {
@@ -245,9 +430,34 @@ footer a{
 		display: flex;
 		margin: 0 auto;
 	}
-}
-@media screen and (max-width: 340px) {
 	h3{
-		font-size: 35px;
+		font-size: 25px;
+	}
+	label{
+		font-size: 23px;
+	}
+	h1{
+		font-size: 55px;
+		letter-spacing: 0px;
+	}
+	.video iframe {
+		width: 310px;
+		height: 200px;
+	}
+	.right-content-about p {
+		font-size: 17px;
+	}
+}
+@media screen and (max-width: 400px) {
+	li a {
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 386px) {
+	.about-section h3{
+		margin-right: -28px;
+	}
+	.image-left-download img {
+		max-width: 200px;
 	}
 }
