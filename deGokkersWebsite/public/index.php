@@ -37,7 +37,7 @@
 
         <div class="video">
             <h1>BROSTRISCH</h1>
-            <iframe src="https://www.youtube.com/embed/SP-lrqa5cd8" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/5xtJRV_sSu4" allowfullscreen></iframe>
             <h4>Download Now!</h4>
         </div>
 
@@ -54,7 +54,18 @@
                 </div>
                 <div class="right-content-download">
                     <p>You must be logged in to download the program</p>
-                    <a href="../app/Application/Application.zip">DOWNLOAD</a>
+                    <?php
+                    session_start();
+                    if(! isset($_SESSION['user']))
+                    {
+                        echo "<a href='#login'>DOWNLOAD</a>";
+                    }
+                    else
+                    {
+                        echo "<a href='../app/application/Application.zip'>DOWNLOAD</a>";
+                        session_destroy();
+                    }
+                    ?>
                     <p>By downloading you agree to our terms of service</p>
                     <h2>Website &#38; Program</h2>
                     <h2>Made by Youssef, Jarno &#38; Lennard.</h2>
@@ -86,32 +97,32 @@
 
         <div class="registerAndLogin" id="register">
             <h3>REGISTER</h3>
-            <form action="#">
+            <form action="../app/register.php" method="post">
                 <div class="wrapper">
                     <label>Voornaam:</label>
-                    <input type="text">
+                    <input type="text" name="first_name">
                     <label>Achternaam:</label>
-                    <input type="text">
+                    <input type="text" name="last_name">
                     <label>Gebruikersnaam:</label>
-                    <input type="text">
+                    <input type="text" name="username">
                     <label>E-mailadres:</label>
-                    <input type="email">
+                    <input type="email" name="email">
                     <label>Wachtwoord:</label>
-                    <input type="password" autocomplete="off">
+                    <input type="password" name="password" autocomplete="off">
                 </div>
                 <div class="button">
                     <button type="submit">Registreren</button>
                 </div>
             </form>
         </div>
-        <div class="registerAndLogin">
+        <div class="registerAndLogin" id="login">
             <h3>LOGIN</h3>
-            <form action="#">
+            <form action="../app/login.php" method="post">
                 <div class="wrapper">
                     <label>Gebruikersnaam:</label>
-                    <input type="text">
+                    <input type="text" name="usernameLogin">
                     <label>Wachtwoord:</label>
-                    <input type="password">
+                    <input type="password" name="passwordLogin">
                 </div>
                 <div class="button">
                     <button type="submit">Inloggen</button>
