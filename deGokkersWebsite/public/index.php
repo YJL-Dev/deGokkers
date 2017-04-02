@@ -154,7 +154,7 @@
         |=========================================================================|-->
 
         <footer>
-            <a href="../app/tos/TOS.zip">Algemene voorwaarden</a>
+            <a href="../app/tos/tos.zip">Algemene voorwaarden</a>
             <p>Contact: YJLDEV@gmail.com</p>
             <h6>&#169; YJL-Dev 2017</h6>
         </footer>
