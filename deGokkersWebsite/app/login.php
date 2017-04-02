@@ -9,6 +9,7 @@ $sql = "SELECT username FROM tbl_accounts WHERE username = '$usernameLogin'";
 $sth = $database->prepare($sql);
 $sth->execute();
 $count = $sth->rowCount();
+
 if ($count > 0)
 {
     $passwordHash = hash('ripemd160', $passwordLogin);
@@ -16,15 +17,21 @@ if ($count > 0)
     $sth = $database->prepare($sql);
     $sth->execute();
     $count = $sth->rowCount();
+
     if ($count > 0)
     {
         session_start();
         $_SESSION['user'] = $usernameLogin;
+
         $message = "Login Succesvol!";
+        header("location: ../public/index.php?message=$message");
+    }
+    else{
+        $message = "Wrong password or username!";
         header("location: ../public/index.php?message=$message");
     }
 }
 else{
-    $message = "Account or password doesn't exits!";
+    $message = "Account doesn't exits!";
     header("location: ../public/index.php?message=$message");
 }

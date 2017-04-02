@@ -37,6 +37,19 @@
 
         <div class="video">
             <h1>BROSTRISCH</h1>
+            <?php
+
+            if (isset($_GET["message"]))
+            {
+                echo "<p>" . $_GET["message"] . "</p>";
+            }
+
+            else
+            {
+
+            }
+
+            ?>
             <iframe src="https://www.youtube.com/embed/5xtJRV_sSu4" allowfullscreen></iframe>
             <h4>Download Now!</h4>
         </div>
@@ -55,16 +68,20 @@
                 <div class="right-content-download">
                     <p>You must be logged in to download the program</p>
                     <?php
-                    session_start();
-                    if(! isset($_SESSION['user']))
-                    {
-                        echo "<a href='#login'>DOWNLOAD</a>";
-                    }
-                    else
-                    {
-                        echo "<a href='../app/application/Application.zip'>DOWNLOAD</a>";
-                        session_destroy();
-                    }
+
+                        session_start();
+
+                        if(! isset($_SESSION['user']))
+                        {
+                            echo "<a href='#login'>DOWNLOAD</a>";
+                        }
+
+                        else
+                        {
+                            echo "<a href='../app/application/BROSTRISCH.zip'>DOWNLOAD</a>";
+                            session_destroy();
+                        }
+
                     ?>
                     <p>By downloading you agree to our terms of service</p>
                     <h2>Website &#38; Program</h2>
@@ -83,7 +100,7 @@
                         <p>We moesten binnen 7 weken</p>
                         <p>het programma af hebben</p>
                         <p>en een promotie pagina hebben.</p>
-                        <p>Bekijk onze video voor het programma uitleg.</p>
+                        <p>Bekijk onze trailer.</p>
                     </div>
                 </div>
             </div>
@@ -137,9 +154,9 @@
         |=========================================================================|-->
 
         <footer>
-            <a href="404.php">TOS</a>
+            <a href="../app/tos/TOS.zip">Algemene voorwaarden</a>
             <p>Contact: YJLDEV@gmail.com</p>
-            <h6>&#169; YJL Development 2017</h6>
+            <h6>&#169; YJL-Dev 2017</h6>
         </footer>
 
     <!-- End of the whole website! -->

@@ -12,7 +12,6 @@
         html {
             color: #888;
             display: table;
-            font-family: "HelveticaNeueItalic";
             height: 100%;
             text-align: center;
             width: 100%;
