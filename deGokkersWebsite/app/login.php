@@ -25,22 +25,32 @@ else
     else{
         if ($count > 0)
         {
-            $passwordHash = hash('ripemd160', $passwordLogin);
-            $sql = "SELECT password FROM tbl_accounts WHERE password = '$passwordHash'";
+            $sql = "SELECT `username` FROM tbl_accounts WHERE username= '$usernameLogin' AND `activated` = 1";
             $sth = $database->prepare($sql);
             $sth->execute();
             $count = $sth->rowCount();
-
             if ($count > 0)
             {
-                session_start();
-                $_SESSION['user'] = $usernameLogin;
+                $passwordHash = hash('ripemd160', $passwordLogin);
+                $sql = "SELECT password FROM tbl_accounts WHERE password = '$passwordHash' AND `activated` = 1";
+                $sth = $database->prepare($sql);
+                $sth->execute();
+                $count = $sth->rowCount();
+                if ($count > 0)
+                {
+                    session_start();
+                    $_SESSION['user'] = $usernameLogin;
 
-                $message = "Login Succesvol!";
-                header("location: ../public/index.php?message=$message");
+                    $message = "Login Succesvol!";
+                    header("location: ../public/index.php?message=$message");
+                }
+                else{
+                    $message = "Login failed! Wrong password!";
+                    header("location: ../public/index.php?message=$message");
+                }
             }
             else{
-                $message = "Login failed! Wrong password!";
+                $message = "Login failed! Check email for activation!";
                 header("location: ../public/index.php?message=$message");
             }
         }
