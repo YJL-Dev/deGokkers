@@ -7,8 +7,7 @@ $passwordLogin = $_POST['passwordLogin'];
 
 $sql = "SELECT username FROM tbl_accounts WHERE username = '$usernameLogin'";
 $sth = $database->prepare($sql);
-$sth->execute();
-$count = $sth->rowCount();
+$count = $sth->execute();
 
 if(!isset($usernameLogin) || trim($usernameLogin) == '')
 {
@@ -41,7 +40,7 @@ else
                     session_start();
                     $_SESSION['user'] = $usernameLogin;
 
-                    $message = "Login Succesvol!";
+                    $message = "Login Succesvol! Refresh the page to log out!";
                     header("location: ../public/index.php?message=$message");
                 }
                 else{

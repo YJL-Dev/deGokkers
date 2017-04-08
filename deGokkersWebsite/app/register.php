@@ -60,8 +60,32 @@ if (strlen($userFirstName)> 1)
                                 $sql = "INSERT INTO tbl_accounts (email, first_name, last_name, username, password) VALUES ('$userEmail','$userFirstName','$userLastName','$userName','$passwordHash')";
                                 $database->query($sql);
                                 $sth = $database->prepare($sql);
-                                $sth->execute();
                                 $count = $sth->rowCount();
+                                $sendEmail = 1;
+                                
+                                if ($sendEmail === 1)
+                                {
+                                	$to      = $userEmail;
+									$subject = 'Activation';
+									$message = "Thanks for registering $userName! Here is your account activation link: http://brostrisch.ddns.net/app/verify.php?username=$userName";
+									$headers = 'From: brostrisch@supp.nl' . "\r\n" .
+									    'Reply-To: brostrisch@supp.nl' . "\r\n" .
+									    'X-Mailer: PHP/' . phpversion();
+									if (mail($to, $subject, $message, $headers))
+									{
+									    $messageRegister = "Register succeeded! Activate your account by clicking the activation link in your mail.";
+									    header("location: ../public/index.php?message=$messageRegister");
+									}
+									else
+									{
+									    $messageRegister = "Register failed! Something is going wrong...";
+									    header("location: ../public/index.php?message=$messageRegister");
+									}
+                                }
+                                else
+                                {		$messageRegister = "Something is going wrong... Try again!";
+									    header("location: ../public/index.php?message=$messageRegister");
+                                }
                             }
                             catch (PDOException $e)
                             {
@@ -97,18 +121,3 @@ else{
         $messageRegister = "Register failed! First name must be at least 2 characters!";
         header("location: ../public/index.php?message=$messageRegister");
     }
-
-$to      = $userEmail;
-$subject = 'Activation';
-$message = "Thanks for registering $userName! Here is your account activation link: http://brostrisch.ddns.net/app/verify.php?username=$userName";
-$headers = 'From: brostrisch@supp.nl' . "\r\n" .
-    'Reply-To: brostrisch@supp.nl' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-if (mail($to, $subject, $message, $headers))
-{
-    header("location:../index.php");
-}
-else
-{
-    header("location:../index.php");
-}
